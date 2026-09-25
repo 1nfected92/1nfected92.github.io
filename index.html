@@ -8,12 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230c1c35'/%3E%3Cpath d='M27 65c17 13 31 13 46 0M32 38c14-13 25-13 36 0' fill='none' stroke='%23d7b66a' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="brand.css" />
 </head>
 <body>
   <header class="site-header" id="top">
-    <a class="brand" href="#home" aria-label="The Soleful Goddess home"><span class="brand-mark">SG</span><span>The Soleful<br><em>Goddess</em></span></a>
+    <a class="brand" href="#home" aria-label="The Soleful Goddess home"><img class="brand-logo" src="assets/logo.png" alt="The Soleful Goddess" /></a>
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
     </nav>
@@ -23,7 +24,7 @@
   <main id="home">
     <section class="hero section-wrap">
       <div class="hero-copy reveal"><p class="eyebrow">WELLNESS • RESTORATION • RITUAL</p><h1>Return to your<br><span>center.</span></h1><p class="hero-text">A private wellness experience where therapeutic touch, intentional care, and quiet luxury meet.</p><div class="hero-actions"><a class="button" href="#booking">Let’s get you relaxed <span>↗</span></a><a class="text-link" href="#services">Explore treatments <span>↓</span></a></div><div class="hero-meta"><div><strong>12–9</strong><span>Every day</span></div><div><strong>Carrollton</strong><span>Texas</span></div><div><strong>18+</strong><span>Guests welcome</span></div></div></div>
-      <div class="hero-visual reveal"><div class="hero-photo"><img src="assets/portrait.jpg" alt="Veronica Marie Castro, owner of The Soleful Goddess" /></div><div class="hero-badge"><span>THE</span><strong>SOULFUL</strong><span>GODDESS</span></div><div class="hero-note">A softer way<br>to feel better.</div></div>
+      <div class="hero-visual reveal"><div class="hero-photo"><img src="assets/portrait.jpg" alt="Veronica Marie Castro, owner of The Soleful Goddess" /></div><div class="hero-badge"><img src="assets/logo.png" alt="The Soleful Goddess logo" /></div><div class="hero-note">A softer way<br>to feel better.</div></div>
     </section>
 
     <section class="statement"><div class="section-wrap statement-inner"><p class="eyebrow">THE EXPERIENCE</p><h2>Care that meets you<br><em>where you are.</em></h2><p>At The Soleful Goddess, every appointment is designed to help you release tension, reconnect with your body, and leave feeling renewed.</p></div></section>
@@ -48,7 +49,7 @@
     <section class="contact-section" id="contact"><div class="section-wrap contact-grid"><div><p class="eyebrow">COME AS YOU ARE</p><h2>Let’s get you<br><em>relaxed.</em></h2><p>4425 Plano Pkwy, Suite 803<br>Carrollton, TX 75010</p><div class="contact-links"><a href="tel:+12142774853">(214) 277-4853</a><a href="mailto:info@thesolefulgoddess.com">info@thesolefulgoddess.com</a><a href="https://www.instagram.com/soleful_goddess_healing/" target="_blank" rel="noreferrer">Instagram ↗</a></div></div><form class="contact-form" id="contactForm"><p class="eyebrow">SEND A NOTE</p><label>Name<input required name="name" placeholder="Your name" /></label><label>Email<input required type="email" name="email" placeholder="you@example.com" /></label><label>How can we help?<textarea required name="message" rows="4" placeholder="Tell us what you’re looking for..."></textarea></label><button class="button" type="submit">Send message <span>↗</span></button><p class="form-success" id="contactSuccess" role="status"></p></form></div></section>
   </main>
 
-  <footer class="site-footer"><div class="section-wrap footer-inner"><a class="brand" href="#top"><span class="brand-mark">SG</span><span>The Soleful<br><em>Goddess</em></span></a><p>Modern luxury wellness in Carrollton, Texas.</p><span>© 2026 The Soleful Goddess</span></div></footer>
+  <footer class="site-footer"><div class="section-wrap footer-inner"><a class="brand" href="#top"><img class="brand-logo" src="assets/logo.png" alt="The Soleful Goddess" /></a><p>Modern luxury wellness in Carrollton, Texas.</p><span>© 2026 The Soleful Goddess</span></div></footer>
   <div class="chatbot" aria-live="polite"><button class="chat-toggle" aria-label="Open wellness assistant">✦</button><div class="chat-panel"><div class="chat-header"><strong>Goddess Guide</strong><button class="chat-close" aria-label="Close assistant">×</button></div><div class="chat-messages"><p class="bot">Welcome. I can help you explore treatments, pricing, and appointment preparation.</p></div><div class="chat-options"><button data-reply="Which treatment is right for me?">Find my treatment</button><button data-reply="What are your hours?">Hours & location</button><button data-reply="How do I book?">How to book</button></div></div></div>
   <div class="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image"><button class="lightbox-close">×</button><img src="" alt="" /></div>
   <script src="script.js?v=2"></script>
