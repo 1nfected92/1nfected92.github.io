@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#031026" />
+  <meta name="description" content="WASH ME Service Detailing — reservas, detailing y administración demo en Funza, Colombia." />
+  <title>WASH ME | Service Detailing</title>
+  <link rel="icon" href="./wash-me-logo.webp" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="splash" class="splash" aria-hidden="true">
+    <div class="splash-ripple r1"></div>
+    <div class="splash-ripple r2"></div>
+    <img src="./wash-me-logo.webp" class="splash-logo" alt="" />
+    <div class="splash-copy">LIMPIEZA · DETALLE · BRILLO</div>
+  </div>
+
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="bubble-field" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="WASH ME Inicio">
+      <img src="./wash-me-logo.webp" alt="WASH ME" />
+      <span><b>WASH ME</b><small>Service Detailing</small></span>
+    </a>
+    <nav class="public-nav" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#reservar">Reservar</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <div class="role-switch" aria-label="Cambiar modo de prueba">
+      <button class="role-btn active" data-role="client">Cliente</button>
+      <button class="role-btn" data-role="employee">Empleado</button>
+      <button class="role-btn owner" data-role="owner">Dueño</button>
+    </div>
+  </header>
+
+  <div id="demoBanner" class="demo-banner">
+    <span class="pulse-dot"></span><strong>DEMO INTERACTIVA</strong>
+    <span>Los tres accesos están disponibles arriba para presentación.</span>
+  </div>
+
+  <main>
+    <section id="clientView" class="view active">
+      <section id="inicio" class="hero section-shell">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">FUNZA · CUNDINAMARCA</span>
+          <h1>Tu carro.<br><span>Impecable.</span></h1>
+          <p>Lavado profesional y detailing con reserva en línea, seguimiento del servicio y atención todos los días.</p>
+          <div class="hero-actions">
+            <a href="#reservar" class="btn btn-primary">Reservar ahora</a>
+            <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+          </div>
+          <div class="hero-points">
+            <span>✓ Pago en el local</span><span>✓ Lunes a domingo</span><span>✓ 10:00 a. m. – 6:00 p. m.</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal delay-1">
+          <div class="logo-orbit">
+            <div class="orbit-line o1"></div><div class="orbit-line o2"></div>
+            <img src="./wash-me-logo.webp" alt="WASH ME Service Detailing" class="hero-logo" />
+            <div class="shine"></div>
+          </div>
+          <div class="mini-card card-a"><b id="heroOpenSlots">—</b><span>cupos próximos</span></div>
+          <div class="mini-card card-b"><b>100%</b><span>detallado</span></div>
+        </div>
+      </section>
+
+      <section id="servicios" class="section-shell section-pad">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">SERVICIOS</span><h2>El cuidado que tu vehículo merece</h2></div>
+          <p>Precios demo en pesos colombianos. El dueño puede modificarlos desde su panel.</p>
+        </div>
+        <div id="servicesGrid" class="services-grid"></div>
+      </section>
+
+      <section id="reservar" class="section-shell section-pad booking-section">
+        <div class="booking-intro reveal">
+          <span class="eyebrow">RESERVA EN LÍNEA</span>
+          <h2>Escoge tu servicio y horario</h2>
+          <p>Los cupos se recalculan con las reservas guardadas en Supabase.</p>
+          <div class="flow-list">
+            <div><span>01</span><p><b>Datos</b><small>Tu información y vehículo</small></p></div>
+            <div><span>02</span><p><b>Servicio</b><small>Selecciona el cuidado</small></p></div>
+            <div><span>03</span><p><b>Horario</b><small>Día y cupo disponible</small></p></div>
+            <div><span>04</span><p><b>Listo</b><small>Pagas en el local</small></p></div>
+          </div>
+        </div>
+        <form id="bookingForm" class="glass-card booking-form reveal delay-1">
+          <div class="form-title"><h3>Nueva reserva</h3><span class="status-chip">Pago presencial</span></div>
+          <div class="grid-2">
+            <label>Nombre completo<input id="clientName" required autocomplete="name" placeholder="Ej. Laura Martínez" /></label>
+            <label>Teléfono<input id="clientPhone" required inputmode="tel" placeholder="Ej. 300 555 0188" /></label>
+            <label>Email <small>(opcional)</small><input id="clientEmail" type="email" autocomplete="email" placeholder="correo@ejemplo.com" /></label>
+            <label>Color del vehículo<input id="vehicleColor" required placeholder="Ej. Gris" /></label>
+            <label>Marca<select id="vehicleMake" required><option value="">Seleccionar</option></select></label>
+            <label>Modelo<select id="vehicleModel" required disabled><option value="">Primero elige marca</option></select></label>
+            <label>Año<select id="vehicleYear" required></select></label>
+            <label>Placa <small>(opcional)</small><input id="vehiclePlate" maxlength="10" placeholder="ABC123" /></label>
+          </div>
+          <label>Servicio<select id="serviceSelect" required><option value="">Seleccionar servicio</option></select></label>
+          <div class="grid-2">
+            <label>Fecha<input id="bookingDate" type="date" required /></label>
+            <label>Horario<select id="bookingTime" required disabled><option value="">Elige una fecha</option></select></label>
+          </div>
+          <label>Notas <small>(opcional)</small><textarea id="customerNotes" rows="3" placeholder="Algo que debamos revisar especialmente..."></textarea></label>
+          <div id="bookingSummary" class="booking-summary"><span>Total estimado</span><strong>$0 COP</strong></div>
+          <button class="btn btn-primary full" type="submit">Confirmar solicitud</button>
+          <p class="fineprint">La reserva queda registrada como <b>Solicitada</b>. El pago se realiza en el establecimiento.</p>
+        </form>
+      </section>
+
+      <section class="section-shell section-pad lookup-section">
+        <div class="section-head compact reveal">
+          <div><span class="eyebrow">MI RESERVA</span><h2>Consulta o modifica tu servicio</h2></div>
+          <p>Busca tus solicitudes usando el número de teléfono registrado.</p>
+        </div>
+        <div class="lookup-bar reveal">
+          <input id="lookupPhone" inputmode="tel" placeholder="Número de teléfono" />
+          <button id="lookupBtn" class="btn btn-primary" type="button">Buscar reserva</button>
+        </div>
+        <div id="clientBookings" class="booking-results empty-state">Ingresa tu teléfono para ver tus reservas.</div>
+      </section>
+
+      <section id="ubicacion" class="section-shell section-pad location-section">
+        <div class="location-card reveal">
+          <div class="location-info">
+            <span class="eyebrow">ENCUÉNTRANOS</span><h2>Serrezuelita, Funza</h2>
+            <p id="addressText">Cargando dirección...</p>
+            <div class="hours"><b>Horario</b><span>Lunes a domingo · 10:00 a. m. – 6:00 p. m.</span></div>
+            <a id="mapsLink" class="btn btn-primary" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          </div>
+          <a id="mapAnchor" target="_blank" rel="noopener" class="map-wrap" aria-label="Abrir ubicación en Google Maps">
+            <iframe id="mapFrame" title="Ubicación WASH ME" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <span>Dirección demo · Abrir mapa ↗</span>
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <section id="employeeView" class="view dashboard-view section-shell section-pad">
+      <div class="dash-head">
+        <div><span class="eyebrow">PORTAL DE EMPLEADO</span><h1>Mi jornada</h1><p>Modo de prueba sin login. Selecciona un empleado para simular su sesión.</p></div>
+        <label class="employee-picker">Empleado<select id="employeePicker"></select></label>
+      </div>
+      <div class="dashboard-grid">
+        <article class="glass-card punch-card">
+          <div class="card-icon">◷</div><span class="muted">Estado actual</span><h3 id="clockState">Fuera de turno</h3>
+          <div id="clockSince" class="clock-live">--:--:--</div>
+          <button id="clockButton" class="btn btn-primary full">Clock in</button>
+        </article>
+        <article class="glass-card stat-card"><span>Servicios asignados hoy</span><strong id="employeeTodayCount">0</strong><small id="employeeTodayHint">Sin servicios pendientes</small></article>
+        <article class="glass-card stat-card"><span>Horas en el período</span><strong id="employeeHours">0.0</strong><small>Horas registradas</small></article>
+      </div>
+      <div class="dashboard-section">
+        <div class="subhead"><h2>Servicios asignados</h2><span class="status-chip">Hoy</span></div>
+        <div id="employeeAssignments" class="data-list"></div>
+      </div>
+      <div class="dashboard-section">
+        <div class="subhead"><h2>Mis registros de tiempo</h2><button id="refreshEmployee" class="btn btn-small btn-ghost">Actualizar</button></div>
+        <div class="table-wrap"><table><thead><tr><th>Entrada</th><th>Salida</th><th>Descanso</th><th>Horas</th></tr></thead><tbody id="employeeTimesheet"></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="ownerView" class="view dashboard-view section-shell section-pad">
+      <div class="dash-head owner-head">
+        <div><span class="eyebrow">OWNER CONTROL CENTER</span><h1>WASH ME Dashboard</h1><p>Operación, equipo, reservas, servicios y nómina desde un solo panel.</p></div>
+        <div class="live-pill"><span class="pulse-dot"></span> Base de datos conectada</div>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi"><span>Reservas hoy</span><strong id="kpiBookings">0</strong><small id="kpiBookingsSub">—</small></article>
+        <article class="kpi"><span>En proceso</span><strong id="kpiInProgress">0</strong><small>Servicios activos</small></article>
+        <article class="kpi"><span>Equipo activo</span><strong id="kpiEmployees">0</strong><small>Empleados</small></article>
+        <article class="kpi"><span>Ingresos registrados</span><strong id="kpiRevenue">$0</strong><small>Reservas pagadas</small></article>
+      </div>
+
+      <div class="owner-tabs" role="tablist">
+        <button class="owner-tab active" data-tab="calendar">Calendario</button>
+        <button class="owner-tab" data-tab="services">Servicios</button>
+        <button class="owner-tab" data-tab="employees">Empleados</button>
+        <button class="owner-tab" data-tab="payroll">Timesheets & Payroll</button>
+        <button class="owner-tab" data-tab="settings">Configuración</button>
+      </div>
+
+      <div id="tab-calendar" class="owner-panel active">
+        <div class="subhead"><div><h2>Agenda operativa</h2><p>Asignaciones, estados y pagos.</p></div><input id="ownerDate" type="date" /></div>
+        <div id="ownerBookings" class="data-list"></div>
+      </div>
+
+      <div id="tab-services" class="owner-panel">
+        <div class="panel-grid split">
+          <form id="serviceForm" class="glass-card form-card">
+            <h3>Agregar servicio</h3>
+            <label>Nombre<input id="newServiceName" required /></label>
+            <label>Categoría<input id="newServiceCategory" required value="Detailing" /></label>
+            <label>Descripción<textarea id="newServiceDescription" rows="3" required></textarea></label>
+            <div class="grid-2"><label>Duración (min)<input id="newServiceDuration" type="number" min="15" value="120" required /></label><label>Precio COP<input id="newServicePrice" type="number" min="0" step="1000" required /></label></div>
+            <button class="btn btn-primary full" type="submit">Agregar servicio</button>
+          </form>
+          <div class="glass-card form-card"><h3>Servicios actuales</h3><div id="ownerServices" class="editable-list"></div></div>
+        </div>
+      </div>
+
+      <div id="tab-employees" class="owner-panel">
+        <div class="panel-grid split">
+          <form id="employeeForm" class="glass-card form-card">
+            <h3>Agregar empleado</h3>
+            <div class="grid-2"><label>Nombre<input id="newEmployeeFirst" required /></label><label>Apellido<input id="newEmployeeLast" required /></label></div>
+            <label>Teléfono<input id="newEmployeePhone" inputmode="tel" /></label>
+            <label>Cargo<input id="newEmployeePosition" value="Detailer" required /></label>
+            <label>Tarifa por hora (COP)<input id="newEmployeeRate" type="number" min="0" step="1000" value="18000" required /></label>
+            <button class="btn btn-primary full" type="submit">Agregar empleado</button>
+          </form>
+          <div class="glass-card form-card"><h3>Equipo</h3><div id="ownerEmployees" class="editable-list"></div></div>
+        </div>
+        <div class="glass-card employee-file">
+          <div class="subhead"><div><h3>Expediente del empleado</h3><p>Notas e historial de servicios.</p></div><select id="employeeFilePicker"></select></div>
+          <div class="file-grid">
+            <div><h4>Notas</h4><div id="employeeNotes" class="notes-list"></div><div class="inline-add"><input id="employeeNoteInput" placeholder="Agregar nota..." /><button id="addEmployeeNote" class="btn btn-small btn-primary">Guardar</button></div></div>
+            <div><h4>Historial de servicios</h4><div id="employeeHistory" class="history-list"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-payroll" class="owner-panel">
+        <div class="glass-card payroll-controls">
+          <label>Frecuencia<select id="payrollCycle"><option value="weekly">Semanal</option><option value="biweekly">Cada dos semanas</option></select></label>
+          <label>Desde<input id="payrollStart" type="date" /></label><label>Hasta<input id="payrollEnd" type="date" /></label>
+          <button id="runPayroll" class="btn btn-primary">Calcular nómina</button>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>Empleado</th><th>Horas</th><th>Tarifa</th><th>Base</th><th>Ajustes</th><th>Total</th></tr></thead><tbody id="payrollTable"></tbody></table></div>
+      </div>
+
+      <div id="tab-settings" class="owner-panel">
+        <form id="settingsForm" class="glass-card settings-form">
+          <div class="subhead"><div><h2>Configuración del negocio</h2><p>Todos estos valores se guardan en Supabase.</p></div><span class="status-chip">Configurable</span></div>
+          <div class="grid-2">
+            <label>Teléfono del negocio<input id="settingPhone" /></label>
+            <label>Dirección<input id="settingAddress" /></label>
+            <label>Apertura<input id="settingOpen" type="time" /></label>
+            <label>Cierre<input id="settingClose" type="time" /></label>
+            <label>Intervalo de slots (min)<input id="settingInterval" type="number" min="30" step="30" /></label>
+            <label>Capacidad por slot<input id="settingCapacity" type="number" min="1" max="20" /></label>
+            <label>Frecuencia de nómina<select id="settingPayroll"><option value="weekly">Semanal</option><option value="biweekly">Cada dos semanas</option></select></label>
+          </div>
+          <button class="btn btn-primary" type="submit">Guardar configuración</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="./wash-me-logo.webp" alt="WASH ME" />
+    <div><b>WASH ME Service Detailing</b><span>Serrezuelita · Funza · Colombia</span></div>
+    <p>Demo funcional · Reservas y gestión conectadas a Supabase</p>
+  </footer>
+
+  <dialog id="editBookingDialog" class="modal">
+    <form id="editBookingForm" method="dialog">
+      <button class="modal-close" value="cancel" aria-label="Cerrar">×</button>
+      <span class="eyebrow">MODIFICAR RESERVA</span><h3 id="editBookingTitle">Reserva</h3>
+      <input id="editBookingId" type="hidden" />
+      <label>Servicio<select id="editService"></select></label>
+      <div class="grid-2"><label>Fecha<input id="editDate" type="date" /></label><label>Horario<select id="editTime"></select></label></div>
+      <div class="modal-actions"><button id="cancelBookingBtn" class="btn danger" type="button">Cancelar reserva</button><button class="btn btn-primary" type="submit">Guardar cambios</button></div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
